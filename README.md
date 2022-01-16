@@ -1,8 +1,8 @@
 # Markdown
-A markdown example shows how to write a markdown file. This document integrates core syntax and extensions (GMF).
+マークダウンのサンプルでは、マークダウンファイルの書き方を紹介しています。このドキュメントでは、コアシンタックスと拡張機能（GMF）を統合しています。
 
 * [Block Elements](#block-elements)
-  * [Paragraphs and Line Breaks](#paragraphs-and-line-breaks)
+  * [段落と改行](#段落と改行)
   * [Headers](#headers)
   * [Blockquotes](#blockquotes)
   * [Lists](#lists)
@@ -21,11 +21,11 @@ A markdown example shows how to write a markdown file. This document integrates 
 * [Inline HTML](#inline-html)
 
 ## Block Elements
-### Paragraphs and Line Breaks
-#### Paragraphs
+### 段落と改行
+#### 段落
 HTML Tag: `<p>`
 
-One or more blank lines. (A blank line is a line containing nothing but **spaces** or **tabs** is considered blank.)
+1行以上の空白行。 (空白行とは、何も書かれていない行のことです。  **spaces** か **tabs** は空白とみなす。)
 
 Code:
 
