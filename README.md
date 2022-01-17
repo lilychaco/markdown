@@ -3,10 +3,10 @@
 
 * [Block Elements](#block-elements)
   * [段落と改行](#段落と改行)
-  * [Headers](#headers)
-  * [Blockquotes](#blockquotes)
-  * [Lists](#lists)
-  * [Code Blocks](#code-blocks)
+  * [見出し](#見出し)
+  * [引用](#引用)
+  * [リスト](#リスト)
+  * [コードブロック](#コードブロック)
   * [Horizontal Rules](#horizontal-rules)
   * [Table](#table)
 * [Span Elements](#span-elements)
@@ -25,7 +25,7 @@
 #### 段落
 HTML Tag: `<p>`
 
-1行以上の空白行。 (空白行とは、何も書かれていない行のことです。  **spaces** か **tabs** は空白とみなす。)
+1行以上の空白行。 (空白行とは、何も書かれていない行のことです。  スペース　または　タブ　は空白とみなします。)
 
 Code:
 
@@ -40,10 +40,10 @@ inline.
 
 This is second paragraph.
 ***
-#### Line Breaks
+#### 改行
 HTML Tag: `<br />`
 
-End a line with **two or more spaces**.
+行の最後に、スペースを２つ以上入れる。
 
 Code:
 
@@ -55,12 +55,15 @@ This will be not
 inline.
 ***
 
-### Headers
-Markdown supports two styles of headers, Setext and atx.
-#### Setext
+
+### 見出し
+見出し表記には、２つの方法があります。
+
+#### 下線を引いて表記する方法
 HTML Tags: `<h1>`, `<h2>`
 
-“Underlined” using **equal signs (=)** as `<h1>` and **dashes (-)** as `<h2>` in any number.
+等号記号（＝）を下線に引くと `<h1>` として表示されます。
+ハイフン記号（-)を下線に引くと `<h2>` として表示されます。
 
 Code:
 
@@ -76,10 +79,10 @@ This is an H1
 This is an H2
 -------------
 ***
-#### atx
+#### ハッシュタグを使用する方法
 HTML Tags: `<h1>`, `<h2>`, `<h3>`, `<h4>`, `<h5>`, `<h6>`
 
-Uses 1-6 **hash characters (#)** at the start of the line, corresponding to `<h1>` - `<h6>`.
+**ハッシュ記号 (#)** を、1個は`<h1>`、2個は`<h2>`。6個まで使えます。
 
 Code:
 
@@ -92,7 +95,7 @@ Preview:
 ## This is an H2
 ###### This is an H6
 ***
-Optionally, you may “close” atx-style headers. The closing hashes **don’t need to match** the number of hashes used to open the header.
+見出しを閉じる時に、ハッシュ記号を使うことができます。（数は対応しなくて良いです）
 
 Code:
 
@@ -106,10 +109,12 @@ Preview:
 ### This is an H3 ######
 ***
 
+
 ### Blockquotes
 HTML Tag: `<blockquote>`
 
-Markdown uses email-style **>** characters for blockquoting. It looks best if you hard wrap the text and put a > before every line.
+マークダウンでは、メールで引用を表す時に使う　**>** 記号を使います。 
+テキストを、ハードラップし、全ての行の前に、> を使うと見栄えが良いです。
 
 Code:
 
@@ -129,7 +134,7 @@ Preview:
 > id sem consectetuer libero luctus adipiscing.
 
 ***
-Markdown allows you to be lazy and only put the > before the first line of a hard-wrapped paragraph.
+マークダウンは、段落の最初の行の前に、　> 記号を記すだけでも、引用を表示してくれます。
 
 Code:
 
@@ -149,7 +154,7 @@ Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
 id sem consectetuer libero luctus adipiscing.
 
 ***
-Blockquotes can be nested (i.e. a blockquote-in-a-blockquote) by adding additional levels of >.
+引用は、子要素の引用を持つことができ、>>　と　> 記号を増やして表現できます。
 
 Code:
 
@@ -167,7 +172,7 @@ Preview:
 > Back to the first level.
 
 ***
-Blockquotes can contain other Markdown elements, including headers, lists, and code blocks.
+引用では、他のマークダウン要素、見出しやリストやブロックコードなどを使うことができます。
 
 Code:
 
@@ -192,12 +197,14 @@ Preview:
 
 ***
 
-### Lists
-Markdown supports ordered (numbered) and unordered (bulleted) lists.
-#### Unordered
+### リスト
+Markdownは順序付き（番号付き）リストと順序なし（箇条書き）リストをサポートしています。
+
+#### 箇条書き
+
 HTML Tag: `<ul>`
 
-Unordered lists use **asterisks (*)**, **pluses (+)**, and **hyphens (-)**.
+箇条書きは、 **(*)**, **(+)**, and **(-)**　を使います。
 
 Code:
 
@@ -211,7 +218,7 @@ Preview:
 *   Blue
 
 ***
-is equivalent to:
+同様に
 
 Code:
 
@@ -225,10 +232,10 @@ Code:
     -   Red
     -   Green
     -   Blue
-#### Ordered
+#### 番号付き
 HTML Tag: `<ol>`
 
-Ordered lists use numbers followed by periods:
+番号付きリストは、数字+.(ピリオド）を使います。
 
 Code:
 
@@ -242,7 +249,7 @@ Preview:
 3.  Parish
 
 ***
-It’s possible to trigger an ordered list by accident, by writing something like this:
+数字とピリオドは、間違って、番号付きリストのように表示されることがありますので、リスト出ないときは、バックスラッシュを表記して、リスト表示させないようにしましょう。
 
 Code:
 
@@ -252,7 +259,7 @@ Preview:
 1986. What a great season.
 
 ***
-You can **backslash-escape (\\)** the period:
+バックスラッシュ ** (\\)** を、ピリオドの前に書きます。
 
 Code:
 
@@ -262,10 +269,10 @@ Preview:
 1986\. What a great season.
 
 ***
-#### Indented
+#### インデント
 
-##### Blockquote
-To put a blockquote within a list item, the blockquote’s > delimiters need to be indented:
+##### 引用
+引用をリストアイテム内に配置するには、引用の > 区切り文字をインデントする必要があります。
 
 Code:
 
@@ -281,8 +288,8 @@ Preview:
     > inside a list item.
 
 ***
-##### Code Block
-To put a code block within a list item, the code block needs to be indented twice — **8 spaces** or **two tabs**:
+##### コードブロック
+リストアイテムの中に、コードブロックを表示するには、8個のスペース**8 spaces** か、2個のタブ**two tabs**を入れます。
 
 Code:
 
@@ -296,7 +303,7 @@ Preview:
         <code goes here>
 
 ***
-##### Nested List
+##### ネスト化されたリスト
 Code:
 
     * A
@@ -313,7 +320,7 @@ Preview:
 * C
 
 ***
-### Code Blocks
+### コードブロック
 HTML Tag: `<pre>`
 
 Indent every line of the block by at least **4 spaces** or **1 tab**.
